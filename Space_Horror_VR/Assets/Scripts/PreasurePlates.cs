@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class PreasurePlates : MonoBehaviour
 {
-    public GameObject door_1, door_2;
+    public GameObject door_1, door_2, test;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +29,7 @@ public class PreasurePlates : MonoBehaviour
                 break;
             case "Box":
                 {
+                    InteractionManager.Emission(test, 3f, Color.green);
                     door_2.transform.DORotate(new Vector3(-90, 0, -4), 1f);
                     break;
                 }
@@ -46,6 +47,7 @@ public class PreasurePlates : MonoBehaviour
                 break;
             case "Box":
                 {
+                    InteractionManager.Emission(test, 3f, Color.red);
                     door_2.transform.DORotate(new Vector3(-90, 0, -90), 1f);
                     break;
                 }

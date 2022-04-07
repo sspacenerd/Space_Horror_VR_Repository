@@ -29,7 +29,7 @@ public class InteractionManager : MonoBehaviour
             isTurned = true;
         }
     }
-    public void Emission(GameObject myGameobject, float timeAmount, Color myColor)
+    public static void Emission(GameObject myGameobject, float timeAmount, Color myColor)
     {
         Material mymat = myGameobject.GetComponent<Renderer>().material;
         mymat.EnableKeyword("_EMISSION");

@@ -1192,7 +1192,7 @@ GameObject:
   - component: {fileID: 696743931}
   - component: {fileID: 696743930}
   m_Layer: 0
-  m_Name: Collider (1)
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,6 +1212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door_1: {fileID: 6392889003094532466}
   door_2: {fileID: 6392889003094532466}
+  test: {fileID: 6392889002018219529}
 --- !u!65 &696743931
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2970,6 +2971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door_1: {fileID: 6392889001807935049}
   door_2: {fileID: 6392889003094532466}
+  test: {fileID: 6392889002018219529}
 --- !u!65 &1202982730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4315,7 +4317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147764687416}
   m_LocalRotation: {x: -0, y: -0.13691606, z: -0, w: 0.99058264}
-  m_LocalPosition: {x: 13.45, y: -2.872, z: 3.19}
+  m_LocalPosition: {x: 13.45, y: -2.86, z: 3.19}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_Children:
   - {fileID: 6749314087584485537}
@@ -4377,6 +4379,7 @@ GameObject:
   - component: {fileID: 543450651768105090}
   - component: {fileID: 1965739883}
   - component: {fileID: 1965739884}
+  - component: {fileID: 919132147764687417}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4384,6 +4387,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!143 &919132147764687417
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147764687416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &1031632036065989343
 Transform:
   m_ObjectHideFlags: 0
@@ -17569,7 +17590,7 @@ GameObject:
   - component: {fileID: 6392889001807935052}
   - component: {fileID: 6392889001807935055}
   m_Layer: 0
-  m_Name: Door_Left_01 (1)
+  m_Name: Door_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33093,7 +33114,7 @@ GameObject:
   - component: {fileID: 6392889003094532465}
   - component: {fileID: 6392889003094532464}
   m_Layer: 0
-  m_Name: Door_Left_01 (2)
+  m_Name: Door_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
