@@ -507,6 +507,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Teleport_RightHand",
+                    "type": "Button",
+                    "id": "b5f123b1-0fc3-494e-84d4-e72acc6f21c4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -562,6 +571,17 @@
                     "processors": "StickDeadzone",
                     "groups": "Continuous Move",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4206c9d0-27b1-46f9-bd13-62fe23ed4afd",
+                    "path": "<ViveController>{RightHand}/trackpadClicked",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Teleport_RightHand",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
