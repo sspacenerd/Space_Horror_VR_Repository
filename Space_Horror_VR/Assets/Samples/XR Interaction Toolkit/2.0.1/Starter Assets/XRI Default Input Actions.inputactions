@@ -578,7 +578,7 @@
                     "name": "",
                     "id": "4206c9d0-27b1-46f9-bd13-62fe23ed4afd",
                     "path": "<ViveController>{RightHand}/trackpadClicked",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Teleport_RightHand",
