@@ -11,22 +11,24 @@ public class Printer : MonoBehaviour
     [Header("PhotoTaker")]
     [SerializeField] private GameObject myPhoto;
     [SerializeField] private AudioSource photoAudio, noShotsLeft;
+    [SerializeField] private GameObject PhotoPosition;
     private Texture2D screenCapture;
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+    }
+
+    public void TakePhoto()
+    {
+        if (!takingPhoto && index > 0)
         {
-            if (!takingPhoto && index > 0)
-            {
-                StartCoroutine(TakePhoto(1f));
-                photoAudio.Play();
-            }
-            else if(index <= 0)
-            {
-                noShotsLeft.Play();
-            }
+            StartCoroutine(TakePhoto(1f));
+            photoAudio.Play();
+        }
+        else if (index <= 0)
+        {
+            noShotsLeft.Play();
         }
     }
     public IEnumerator TakePhoto(float coolDown)
@@ -35,7 +37,7 @@ public class Printer : MonoBehaviour
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Interactable");
         foreach(var x in objects)
         {
-            x.GetComponent<OnVisible>().Visibility();
+            x.GetComponent<OnVisible>().OnShot();
         }
         yield return new WaitForEndOfFrame();
         index--;
@@ -44,7 +46,7 @@ public class Printer : MonoBehaviour
         Rect regionToRoad = new Rect(0, 0, Screen.width, Screen.height);
         screenCapture.ReadPixels(regionToRoad, 0, 0, false);
         screenCapture.Apply();
-        GameObject myPhotoInstance = Instantiate(myPhoto, transform.position = new Vector3(0, 0, -94f), transform.rotation * Quaternion.Euler(-145f, 0, 0));
+        GameObject myPhotoInstance = Instantiate(myPhoto, PhotoPosition.transform.position, transform.rotation * Quaternion.Euler(-70, 0, -180));
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f, 0.0f, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
         Renderer[] childs = myPhotoInstance.GetComponentsInChildren<Renderer>();
         foreach(Renderer child in childs)
