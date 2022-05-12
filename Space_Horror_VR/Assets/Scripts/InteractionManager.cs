@@ -8,14 +8,7 @@ public class InteractionManager : MonoBehaviour
 {
     public InputDevice inputDeviceLeft, inputDeviceRight;
     private XRNode inputDeviceNode_L, inputDeviceNode_R;
-    public bool triggerBool, test;
-    [SerializeField] private GameObject flashlight;
-    public static bool isTurned = false;
-
-    private void Start()
-    {
-     
-    }
+    public bool triggerBool;
     void Update()
     {
         GetDevice();
@@ -36,25 +29,6 @@ public class InteractionManager : MonoBehaviour
             GetDevice();
         }
     }
-    public void TurnOnOffLintern()
-    {
-        if (isTurned)
-        {
-            Emission(flashlight, 3, Color.black);
-            isTurned = false;
-        }
-        else
-        {
-            Emission(flashlight, 3, Color.white);
-            isTurned = true;
-        }
-    }
-    public static void Emission(GameObject myGameobject, float timeAmount, Color myColor)
-    {
-        Material mymat = myGameobject.GetComponent<Renderer>().material;
-        mymat.EnableKeyword("_EMISSION");
-        mymat.DOColor(myColor, "_EmissionColor", timeAmount);
-        DynamicGI.UpdateEnvironment();
-    }
+
 
 }
