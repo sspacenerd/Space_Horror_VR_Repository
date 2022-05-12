@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InteractionManager : MonoBehaviour
 {
     public InputDevice inputDeviceLeft, inputDeviceRight;
-    private XRNode inputDeviceNode_L, inputDeviceNode_R;
+    public XRNode inputDeviceNode_L, inputDeviceNode_R;
     public bool triggerBool;
     void Update()
     {
