@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 public class OnVisible : MonoBehaviour
 {
+    private Transform playerPos;
     private Camera cam;
     public bool isTurned;
 
@@ -30,17 +32,25 @@ public class OnVisible : MonoBehaviour
                         GetComponent<MeshRenderer>().enabled = false;
                         GetComponent<BoxCollider>().enabled = false;
                     }
+                    break;
                 }
-                break;
             case "Flashlight":
                 {
                     if (!isTurned && FieldOfView(cam, this.gameObject))
                     {
-                        TurnOnLight();
+                        Emission(this.gameObject, 3, Color.white);
+                        isTurned = true;
                     }
+                    break;
                 }
-
-                break;
+            case "Teleports":
+                {
+                    if(FieldOfView(cam, this.gameObject))
+                    {
+                        SceneManager.LoadScene(1);
+                    }
+                    break;
+                }
         }
     }
     //Funcion para checkear si el objeto está dentro del FOV de la camara
@@ -57,13 +67,7 @@ public class OnVisible : MonoBehaviour
         }
         return true;
     }
-    public void TurnOnLight()
-    {
-        Emission(this.gameObject, 3, Color.white);
-        isTurned = true;
-
-    }
-    public static void Emission(GameObject myGameobject, float timeAmount, Color myColor)
+    public void Emission(GameObject myGameobject, float timeAmount, Color myColor)
     {
         Material mymat = myGameobject.GetComponent<Renderer>().material;
         mymat.EnableKeyword("_EMISSION");
