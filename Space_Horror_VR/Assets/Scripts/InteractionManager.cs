@@ -10,7 +10,7 @@ public class InteractionManager : MonoBehaviour
     public XRNode inputDeviceNode_L, inputDeviceNode_R;
     public bool triggerBool;
     public static bool didIShot;
-    int index = 5;
+    int index = 30;
     bool takingPhoto;
     [Header("PhotoTaker")]
     [SerializeField] private GameObject myPhoto;
