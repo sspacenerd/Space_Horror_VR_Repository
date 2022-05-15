@@ -6,19 +6,14 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject fadeGameObject;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject fade;
+    private void Start()
     {
-        Fade(0, 1f);
+        Fade(fade, 0, 1f);
     }
-    // Update is called once per frame
-    void Update()
+
+    public static void Fade(GameObject gameObjectToFade, float fadeAmount, float time)
     {
-        
-    }
-    public void Fade(float fadeAmount, float time)
-    {
-        fadeGameObject.GetComponent<Image>().DOFade(fadeAmount, time);
+        gameObjectToFade.GetComponent<Image>().DOFade(fadeAmount, time);
     }
 }

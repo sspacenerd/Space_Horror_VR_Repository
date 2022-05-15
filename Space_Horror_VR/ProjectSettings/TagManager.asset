@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
-  - Flashlight
   layers:
   - Default
   - TransparentFX
@@ -13,10 +12,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Scenary
   - 
   - PostProcessing
-  - 1
+  - 
   - 
   - 
   - 

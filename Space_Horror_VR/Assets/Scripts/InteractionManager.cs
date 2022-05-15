@@ -55,7 +55,7 @@ public class InteractionManager : MonoBehaviour
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Interactable");
         foreach (var x in objects)
         {
-            x.GetComponent<OnVisible>().OnShot();
+            x.GetComponent<ObjectManager>().OnShot();
         }
         yield return new WaitForEndOfFrame();
         index--;
