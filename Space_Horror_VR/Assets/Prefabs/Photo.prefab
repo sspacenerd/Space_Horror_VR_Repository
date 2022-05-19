@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2768162647237625586}
   - component: {fileID: 2768162647237625588}
   - component: {fileID: 2768162647237625587}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Photo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3630696229737237865}
   - component: {fileID: 3630696229737237866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Audio_NoShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3630696229763103681}
   - component: {fileID: 3630696229763103682}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Audio_Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3630696230854160908}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrabablePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 7901928486768812611}
   - component: {fileID: 7901928486768812638}
   - component: {fileID: 7901928486768812637}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Marco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
