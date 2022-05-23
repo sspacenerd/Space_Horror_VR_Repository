@@ -28,7 +28,7 @@ public class PreasurePlates : MonoBehaviour
     }
     IEnumerator OutOfEnergy()
     {
-        door.transform.DOMove(new Vector3(door.transform.position.x, door.transform.position.y + 8, door.transform.position.z), 1f);
+        door.transform.DOMove(new Vector3(door.transform.position.x, door.transform.position.y + 4, door.transform.position.z), 1f);
        // yield return new WaitForSeconds(10f);
         //door.transform.DOMove(new Vector3(door.transform.position.x, door.transform.position.y - 8, door.transform.position.z), 1f);
         yield break;
