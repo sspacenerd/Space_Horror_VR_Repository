@@ -29,7 +29,7 @@ public class InteractionManager : MonoBehaviour
             Debug.Log("Hey");
             TakePhoto();
         }
-
+        /*
         RaycastHit grab;
         if (inputDeviceLeft.TryGetFeatureValue(CommonUsages.triggerButton, out triggerBool) && triggerBool && Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out grab, 5) && grab.transform.GetComponent<Rigidbody>())
         {
@@ -47,10 +47,7 @@ public class InteractionManager : MonoBehaviour
             grabbedObject.GetComponent<Rigidbody>().velocity = 5 * (grabbedObjectTrans.position - grabbedObject.transform.position);
         }
         Debug.DrawRay(mainCam.transform.position, mainCam.transform.forward, Color.white);
-    }
-    void Raycast()
-    {
-
+        */
     }
     void GetDevice()
     {
@@ -107,9 +104,4 @@ public class InteractionManager : MonoBehaviour
         takingPhoto = false;
         yield break;
     }
-    private void OnDrawGizmos()
-    {
-        
-    }
-
 }
