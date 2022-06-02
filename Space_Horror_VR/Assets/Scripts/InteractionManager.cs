@@ -25,7 +25,6 @@ public class InteractionManager : MonoBehaviour
         GetDevice();
         if(inputDeviceLeft.TryGetFeatureValue(CommonUsages.triggerButton, out triggerBool) && triggerBool)
         {
-
             Debug.Log("Hey");
             TakePhoto();
         }
