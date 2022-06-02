@@ -9,21 +9,48 @@ public class InteractionManager : MonoBehaviour
     public InputDevice inputDeviceLeft, inputDeviceRight;
     public XRNode inputDeviceNode_L, inputDeviceNode_R;
     public bool triggerBool;
-    public static bool didIShot;
+    public static bool didIShot; 
     int index = 30;
     bool takingPhoto;
     [Header("PhotoTaker")]
     [SerializeField] private GameObject myPhoto;
     [SerializeField] private AudioSource photoAudio, noShotsLeft;
     [SerializeField] private GameObject PhotoPosition;
+    [SerializeField] private Transform grabbedObjectTrans;
     private Texture2D screenCapture;
+    public Camera mainCam;
+    private GameObject grabbedObject;
     void Update()
     {
         GetDevice();
         if(inputDeviceLeft.TryGetFeatureValue(CommonUsages.triggerButton, out triggerBool) && triggerBool)
         {
+
+            Debug.Log("Hey");
             TakePhoto();
-        }     
+        }
+
+        RaycastHit grab;
+        if (inputDeviceLeft.TryGetFeatureValue(CommonUsages.triggerButton, out triggerBool) && triggerBool && Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out grab, 5) && grab.transform.GetComponent<Rigidbody>())
+        {
+            if (grab.transform.tag == "Default" || grab.transform.tag == "Bomb" || grab.transform.name == "BigBomb" || grab.transform.tag == "Assets" || grab.transform.tag == "Alcohol" || grab.transform.name == "Test" || grab.transform.tag == "Enemy")
+            {
+                grabbedObject = grab.transform.gameObject;
+            }
+        }
+        else if (!triggerBool)
+        {
+            grabbedObject = null;
+        }
+        if (grabbedObject)
+        {
+            grabbedObject.GetComponent<Rigidbody>().velocity = 5 * (grabbedObjectTrans.position - grabbedObject.transform.position);
+        }
+        Debug.DrawRay(mainCam.transform.position, mainCam.transform.forward, Color.white);
+    }
+    void Raycast()
+    {
+
     }
     void GetDevice()
     {
@@ -79,6 +106,10 @@ public class InteractionManager : MonoBehaviour
         yield return new WaitForSeconds(coolDown);
         takingPhoto = false;
         yield break;
+    }
+    private void OnDrawGizmos()
+    {
+        
     }
 
 }

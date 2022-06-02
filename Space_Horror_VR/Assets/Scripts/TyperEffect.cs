@@ -31,7 +31,7 @@ public class TyperEffect : MonoBehaviour
 			condition = false;
 			txt = GetComponent<TextMeshProUGUI>();
 			foreach (char c in st)
-			{
+			{ 
 				txt.text += c;
 				yield return new WaitForSeconds(0.05f);
 			}
