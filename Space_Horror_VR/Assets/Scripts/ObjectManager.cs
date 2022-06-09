@@ -14,11 +14,13 @@ public class ObjectManager : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+        /*
         if (mySaveSystem.teleport == 1 && this.gameObject.name == "Teleports")
         {
             this.gameObject.GetComponent<Renderer>().material = standardMat;
             this.gameObject.GetComponent<PreasurePlates>().enabled = true;
         }
+        */
 
     }
     public void OnShot()
