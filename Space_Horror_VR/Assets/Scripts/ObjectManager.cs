@@ -71,7 +71,7 @@ public class ObjectManager : MonoBehaviour
     }
     //Funcion para checkear si el objeto está dentro del FOV de la camara
     private bool FieldOfView(Camera c, GameObject target)
-    {
+    { 
         var planes = GeometryUtility.CalculateFrustumPlanes(c);
         var point = target.transform.position;
         foreach (var plane in planes)
