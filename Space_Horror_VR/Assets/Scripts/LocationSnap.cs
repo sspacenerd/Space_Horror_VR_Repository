@@ -7,12 +7,14 @@ public class LocationSnap : MonoBehaviour
     private bool insideSnapZone;
     public bool snapped;
     public GameObject part, snapRotationReference;
+    public static bool liftSender;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == part.name)
         {
             insideSnapZone = true;
+            liftSender = true;
             SnapObject();
         }
         
@@ -22,6 +24,7 @@ public class LocationSnap : MonoBehaviour
         if(other.gameObject.name == part.name)
         {
             insideSnapZone = false;
+            liftSender = false;
             snapped = false;
         }
     }

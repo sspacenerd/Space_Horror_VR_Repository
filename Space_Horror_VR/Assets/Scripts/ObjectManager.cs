@@ -21,7 +21,6 @@ public class ObjectManager : MonoBehaviour
             this.gameObject.GetComponent<PreasurePlates>().enabled = true;
         }
         */
-
     }
     public void OnShot()
     {

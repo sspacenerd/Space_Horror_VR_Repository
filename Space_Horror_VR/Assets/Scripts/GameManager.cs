@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,5 +16,11 @@ public class GameManager : MonoBehaviour
     public static void Fade(GameObject gameObjectToFade, float fadeAmount, float time)
     {
         gameObjectToFade.GetComponent<Image>().DOFade(fadeAmount, time);
+    }
+    public static IEnumerator ChangeScene(int scene)
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(scene);
+        yield break;
     }
 }
