@@ -11,10 +11,6 @@ public class TyperEffect : MonoBehaviour
 	private bool condition = true;
 
 
-    private void Start()
-    {
-		StartCoroutine(StartText());
-	}
     public void PlayTextToType(string textToType, bool conditionToWait, float timeToWait)
     {
 		StartCoroutine(PlayText(textToType, conditionToWait, timeToWait));
