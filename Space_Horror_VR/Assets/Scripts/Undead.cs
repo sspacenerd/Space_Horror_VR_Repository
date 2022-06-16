@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class Undead : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class Undead : MonoBehaviour
     public Transform target;
     Rigidbody rb;
     public float speed, stopingDistance, rotationSpeed;
-    bool founded;
+    public static bool founded;
+    public GameObject fade;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,13 @@ public class Undead : MonoBehaviour
     {
 
         UndeadMovement();
+    }
+    private void Update()
+    {
+        if (founded)
+        {
+            StartCoroutine(GoBack());
+        }
     }
     public void UndeadMovement()
     {
@@ -44,5 +53,12 @@ public class Undead : MonoBehaviour
             GetComponentInChildren<AudioSource>().DOFade(0, 0.3f);
             founded = true;
         }
+    }
+    IEnumerator GoBack()
+    {
+        GameManager.Fade(fade, 1, 1f);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
+        yield break;
     }
 }
