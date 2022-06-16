@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Space_Horror_VR/Assets/Art/3D/Hospital.fbx.meta
 guid: 00a7b7be40d5a514eae3d2f8de207f76
+========
+guid: 3c00eba44a7f18545b6831d32d7a393f
+>>>>>>>> Art_Scene:Space_Horror_VR/Assets/Rooms_25.blend.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
