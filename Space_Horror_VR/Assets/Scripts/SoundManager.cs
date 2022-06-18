@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
 {
     public AudioSource[] sounds;
     public CanvasGroup mission;
+    public static bool Triggered;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +37,16 @@ public class SoundManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && !Triggered)
         {
             StartCoroutine(Sounds());
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Triggered = true;
         }
     }
 }

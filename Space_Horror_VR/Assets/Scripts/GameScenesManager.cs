@@ -7,6 +7,8 @@ public class GameScenesManager : MonoBehaviour
 {
     [SerializeField] private GameObject fade;
     [SerializeField] private int scene;
+    public static bool hasTraveled;
+    public SaveSystem mySave;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +22,11 @@ public class GameScenesManager : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Player" && this.transform.tag == "Portal")
+        if(collision.transform.tag == "Player" && this.transform.tag == "Portal" && !hasTraveled)
         {
             GameManager.Fade(fade, 1, 1);
+            hasTraveled = true;
+            mySave.SaveData();
             StartCoroutine(GameManager.ChangeScene(scene));
         }
         if(collision.transform.tag == "Player" && LocationSnap.liftSender == true)

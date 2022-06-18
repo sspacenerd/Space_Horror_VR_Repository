@@ -12,7 +12,7 @@ public class SaveSystem : MonoBehaviour
 
     private void Awake()
     {
-        if (ObjectManager.hasTraveled)
+        if (GameScenesManager.hasTraveled)
         {
             LoadData();
         }
@@ -30,17 +30,19 @@ public class SaveSystem : MonoBehaviour
    public void SaveData()
     {
         ES3.Save("playerPos", playerPos.transform.position);
-        ES3.Save("cameraPos", cameraPos.transform.position);
-        ES3.Save("hasTraveled", ObjectManager.hasTraveled);
-        ES3.Save("material", teleport);
+        //ES3.Save("cameraPos", cameraPos.transform.position);
+        ES3.Save("hasTraveled", GameScenesManager.hasTraveled);
+        ES3.Save("Triggered", SoundManager.Triggered);
+        //ES3.Save("material", teleport);
     }
 
     public void LoadData()
     {
         playerPos.transform.position = ES3.Load<Vector3>("playerPos");
-        cameraPos.transform.position = ES3.Load<Vector3>("cameraPos");
-        ObjectManager.hasTraveled = ES3.Load<bool>("hasTraveled");
-        teleport = ES3.Load<int>("material");
+        //cameraPos.transform.position = ES3.Load<Vector3>("cameraPos");
+        GameScenesManager.hasTraveled = ES3.Load<bool>("hasTraveled");
+        SoundManager.Triggered = ES3.Load<bool>("Triggered");
+        //teleport = ES3.Load<int>("material");
 
     }
 }
