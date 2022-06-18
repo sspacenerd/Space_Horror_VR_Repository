@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    public GameObject undead;
+    public GameObject undead, undead2;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,14 @@ public class Trigger : MonoBehaviour
 
         if (collision.transform.tag == "Player")
         {
-            undead.SetActive(true);
+            StartCoroutine(Wait());     
         }
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2f);
+        undead.SetActive(true);
+        undead2.SetActive(true);
+        yield break;
     }
 }
