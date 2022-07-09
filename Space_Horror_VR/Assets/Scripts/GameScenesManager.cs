@@ -8,6 +8,7 @@ public class GameScenesManager : MonoBehaviour
     [SerializeField] private GameObject fade;
     [SerializeField] private int scene;
     public static bool hasTraveled;
+    public GameObject lift;
     public SaveSystem mySave;
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,7 @@ public class GameScenesManager : MonoBehaviour
         }
         if(collision.transform.tag == "Player" && LocationSnap.liftSender == true)
         {
-            Debug.Log("1");
-            //aqui va el cambio de escena
+            lift.transform.Translate(new Vector3(lift.transform.position.x, -98.42f, lift.transform.position.z));
         }
     }
 }
