@@ -7,24 +7,36 @@ public class LocationSnap : MonoBehaviour
     private bool insideSnapZone;
     public bool snapped;
     public GameObject part, snapRotationReference;
-    public static bool liftSender;
+    public static bool liftSender, liftSender2;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == part.name)
+        if (other.gameObject.name == part.name && this.gameObject.name == "SnapZone")
         {
             insideSnapZone = true;
             liftSender = true;
             SnapObject();
         }
-        
+        if (other.gameObject.name == part.name && this.gameObject.name == "SnapZone2")
+        {
+            insideSnapZone = true;
+            liftSender2 = true;
+            SnapObject();
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.name == part.name)
+        if(other.gameObject.name == part.name && this.gameObject.name == "SnapZone")
         {
             insideSnapZone = false;
             liftSender = false;
+            snapped = false;
+        }
+        if (other.gameObject.name == part.name && this.gameObject.name == "SnapZone2")
+        {
+            insideSnapZone = false;
+            liftSender2 = false;
             snapped = false;
         }
     }
