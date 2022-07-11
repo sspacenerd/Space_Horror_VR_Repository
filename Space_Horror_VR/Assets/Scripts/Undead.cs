@@ -57,7 +57,7 @@ public class Undead : MonoBehaviour
     IEnumerator GoBack()
     {
         GameManager.Fade(fade, 1, 1f);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(0);
         yield break;
     }

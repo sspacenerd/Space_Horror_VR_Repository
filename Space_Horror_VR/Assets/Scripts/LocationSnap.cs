@@ -8,6 +8,7 @@ public class LocationSnap : MonoBehaviour
     public bool snapped;
     public GameObject part, snapRotationReference;
     public static bool liftSender, liftSender2;
+    public AudioSource placa;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -46,6 +47,7 @@ public class LocationSnap : MonoBehaviour
         {
             part.gameObject.transform.position = transform.position;
             part.gameObject.transform.rotation = snapRotationReference.transform.rotation;
+            placa.Play();
             snapped = true;
         } 
     }

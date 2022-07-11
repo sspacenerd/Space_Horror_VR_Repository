@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: AnekMalayalam-VariableFont_wdth,wght
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -631758032
   material: {fileID: 3027168898985216143}
-  materialHashCode: 0
+  materialHashCode: -1120933104
   m_Version: 1.1.0
   m_SourceFontFileGUID: 1cc76f596ed950c4e948533507ac50fc
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 1cc76f596ed950c4e948533507ac50fc, type: 3}

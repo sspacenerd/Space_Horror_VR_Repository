@@ -9,8 +9,6 @@ public class TyperEffect : MonoBehaviour
 	public GameObject textBox;
 	private TextMeshProUGUI txt;
 	private bool condition = true;
-
-
     public void PlayTextToType(string textToType, bool conditionToWait, float timeToWait)
     {
 		StartCoroutine(PlayText(textToType, conditionToWait, timeToWait));
@@ -39,15 +37,22 @@ public class TyperEffect : MonoBehaviour
 		yield break;
 	}
 
-	IEnumerator StartText()
+	public IEnumerator StartTextCoroutine()
     {
-		PlayTextToType("Despierta ya! Llevo media hora intentando encontrarte", false, 1f);
+		Debug.Log("s");
+		PlayTextToType("¿Hola? Hay alguien ahí?", false, 1f);
+		yield return new WaitForSeconds(3.5f);
+		PlayTextToType("Hey! Te veo!!", false, 2f);
+		yield return new WaitForSeconds(2.5f);
+		PlayTextToType("Finalmente.. He estado buscando a alguien por tanto tiempo", false, 2f);
 		yield return new WaitForSeconds(5f);
-		PlayTextToType("No encuentro a nadie en la nave, un asteroide rompió el ala Este y se llevó a unos cuantos...", false, 2f);
-		yield return new WaitForSeconds(7f);
-		PlayTextToType("Necesito que reactives el reactor restante... a ver si ponemos en marcha la nave de nuevo", false, 2f);
-		yield return new WaitForSeconds(7f);
-		PlayTextToType("Recuerda que tu camara interactua con los objetos, utilizala para prender la lampara y salir de la sala", false, 2f);
-
+		PlayTextToType("Algo paso... no sabemos nada sobre el area de navegacion y el ascensor esta atascado en tu area... No se como arreglarlo, soy el de seguridad, viendote por las camaras", false, 2f);
+		yield return new WaitForSeconds(13f);
+		PlayTextToType("Necesitamos arreglar el elevador para llegar a la sala de navegacion", false, 2f);
 	}
+
+	public void StartText()
+    {
+		StartCoroutine(StartTextCoroutine());
+    }
 }
